@@ -3,7 +3,7 @@ import moment from 'moment';
 import { Link } from 'react-router-dom';
 import { Box, Anchor, Heading, Text } from 'grommet';
 
-import { parseTitle } from './App';
+import { parseTitle } from '../App';
 
 class Blog extends PureComponent {
   render() {

@@ -3,7 +3,7 @@ import moment from 'moment';
 import { Text, Image, Box, Heading } from 'grommet';
 import Markdown from 'react-markdown';
 
-import { endPoint } from './App';
+import { endPoint } from '../App';
 
 const PostMeta = ({ post }) => (
   <Box>
@@ -22,16 +22,10 @@ const PostMeta = ({ post }) => (
 );
 
 class Post extends PureComponent {
-  state = {
-    page: null,
-    loading: false
-  };
-
   render() {
     const { posts, post } = this.props;
-    const { loading } = this.state;
 
-    if (loading) {
+    if (!post || !posts) {
       return '...loading';
     }
 

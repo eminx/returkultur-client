@@ -5,11 +5,11 @@ import axios from 'axios';
 
 import theme from './theme';
 import './App.css';
-import Calendar from './Calendar';
-import Page from './Page';
-import Post from './Post';
-import Blog from './Blog';
-import Home from './Home';
+import Calendar from './pages/Calendar';
+import Page from './pages/Page';
+import Post from './pages/Post';
+import Blog from './pages/Blog';
+import Home from './pages/Home';
 
 const endPoint = 'http://localhost:1337';
 const parseTitle = title => title.replace(/\s+/g, '-').toLowerCase();

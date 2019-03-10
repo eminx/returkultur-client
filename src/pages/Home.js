@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Box, Image, Anchor, Heading, Text } from 'grommet';
 import Markdown from 'react-markdown';
 
-import { endPoint, parseTitle } from './App';
+import { endPoint, parseTitle } from '../App';
 
 class Home extends PureComponent {
   render() {
