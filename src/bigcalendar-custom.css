@@ -1,0 +1,128 @@
+.rbc-calendar {
+  min-height: 600px;
+  /* max-height: 500px; */
+}
+
+.rbc-calendar .span.rbc-btn-group {
+  display: none;
+}
+
+.rbc-calendar .rbc-event-content {
+  color: #fff;
+  font-size: 12px;
+}
+
+.rbc-calendar .rbc-event.rbc-selected,
+.rbc-calendar .rbc-event {
+  background-color: #74a914;
+}
+
+.ant-layout .rbc-toolbar {
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px;
+  margin-bottom: 0 !important;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border: 1px solid #ddd;
+  border-bottom: none;
+  font-size: 12px;
+  /* background-color: #f9f9f9; */
+}
+
+.rbc-time-view,
+.rbc-month-view,
+.rbc-agenda-content {
+  background-color: #fff;
+}
+
+.rbc-calendar .rbc-agenda-content {
+  font-size: 0.8em;
+}
+
+.rbc-calendar .rbc-agenda-view table tbody > tr > td {
+  padding: 5px;
+}
+
+.rbc-calendar .rbc-agenda-view table .rbc-agenda-time-cell {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+@media (max-width: 600px) {
+  .rbc-toolbar {
+    flex-direction: column;
+  }
+}
+
+.rbc-calendar .rbc-event {
+  border-radius: 0;
+}
+
+.rbc-calendar .rbc-toolbar,
+.rbc-calendar .rbc-time-view,
+.rbc-calendar .rbc-month-view,
+.rbc-calendar .rbc-month-view .rbc-header,
+.rbc-calendar .rbc-month-view > .rbc-month-row + .rbc-month-row,
+.rbc-calendar .rbc-row-bg > .rbc-day-bg + .rbc-day-bg,
+.rbc-calendar .rbc-month-view > .rbc-month-header .rbc-header + .rbc-header,
+.rbc-calendar .rbc-month-view .rbc-header,
+.rbc-calendar .rbc-time-header > .rbc-row > * + *,
+.rbc-calendar .rbc-time-header > .rbc-row:first-child {
+  border: none;
+  border-color: #fbd5d0;
+  border-radius: 0;
+}
+
+.rbc-day-bg.rbc-off-range-bg {
+  background-color: #fff;
+}
+
+.rbc-calendar .rbc-row-bg .rbc-day-bg.rbc-today,
+.rbc-calendar .rbc-today {
+  background-color: #fff;
+  border: 1px solid #74a914;
+}
+.rbc-calendar .rbc-time-content > * + * > * {
+  border-left: 1px dashed #030303;
+}
+.rbc-calendar .rbc-timeslot-group {
+  border-bottom: 1px solid #030303;
+}
+.rbc-calendar .rbc-time-content {
+  border-top: none;
+}
+
+.rbc-toolbar .rbc-btn-group button:active,
+.rbc-toolbar .rbc-btn-group button:focus,
+.rbc-toolbar .rbc-btn-group button:hover,
+.rbc-toolbar .rbc-btn-group button.rbc-active,
+.rbc-toolbar .rbc-btn-group button.rbc-active:focus,
+.rbc-toolbar .rbc-btn-group button.rbc-active:active {
+  outline: none;
+  background-color: #deffb6;
+  color: #74a914;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.rbc-toolbar .rbc-btn-group button {
+  cursor: pointer;
+  color: #74a914;
+  background-color: #fff;
+  /* text-transform: uppercase;
+  font-style: italic; */
+  border: none;
+}
+
+.rbc-toolbar .rbc-btn-group + .rbc-toolbar-label {
+  /* text-transform: uppercase; */
+  color: #74a914;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.rbc-calendar .rbc-date-cell > a {
+  font-weight: 700;
+}
