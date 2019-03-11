@@ -11,7 +11,7 @@ import Post from './pages/Post';
 import Blog from './pages/Blog';
 import Home from './pages/Home';
 
-const endPoint = 'https://returkultur.herokuapp.com/';
+const endPoint = 'https://returkultur.herokuapp.com';
 const parseTitle = title => title.replace(/\s+/g, '-').toLowerCase();
 
 const AppBar = props => (
