@@ -46,7 +46,7 @@ class Calendar extends PureComponent {
     return (
       <Box pad="medium">
         <Heading level="2" alignSelf="center">
-          Calendar
+          Kalender
         </Heading>
         <BigCalendar
           events={happeningsForCalendar}
