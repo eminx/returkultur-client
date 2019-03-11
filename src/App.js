@@ -59,9 +59,9 @@ class App extends Component {
 
   componentDidMount() {
     axios
-      .get('http://localhost:1337/pages')
+      .get(`${endPoint}/pages`)
       .then(pagesResponse => {
-        axios.get('http://localhost:1337/posts').then(postsReponse => {
+        axios.get(`${endPoint}/posts`).then(postsReponse => {
           this.setState({
             loading: false,
             pages: pagesResponse.data,
