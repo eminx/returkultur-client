@@ -85,9 +85,6 @@ class App extends Component {
       page => page.title !== 'Kontakt' && page.title !== 'Start'
     );
 
-    const pathname = window.location.pathname;
-    const currentRoute = mainNav.find(nav => nav.route === pathname).label;
-
     return (
       <Router>
         <Grommet theme={theme}>
