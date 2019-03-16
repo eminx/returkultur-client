@@ -23,10 +23,10 @@ class Blog extends PureComponent {
         />
         <Box basis="600px" pad="medium">
           {posts.map((post, index) => (
-            <Box>
+            <Box key={post.title}>
               <Heading level="2">
                 <Link to={`/posts/${parseTitle(post.title)}`}>
-                  <Anchor>{post.title}</Anchor>
+                  <Anchor as="div">{post.title}</Anchor>
                 </Link>
               </Heading>
               <Text size="xsmall" as="div" margin={{ bottom: 'small' }}>

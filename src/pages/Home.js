@@ -25,10 +25,10 @@ class Home extends PureComponent {
         <Box basis="600px" pad="medium">
           <Box margin={{ vertical: 'large' }}>
             {posts.slice(0, 3).map((post, index) => (
-              <Box>
+              <Box key={post.title}>
                 <Heading level="2" textAlign="center">
                   <Link to={`/posts/${parseTitle(post.title)}`}>
-                    <Anchor>{post.title}</Anchor>
+                    <Anchor as="div">{post.title}</Anchor>
                   </Link>
                 </Heading>
                 <Text

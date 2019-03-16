@@ -5,6 +5,8 @@ import BigCalendar from 'react-big-calendar';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import 'moment/locale/en-gb';
 import { Box, Heading } from 'grommet';
+
+import { endPoint, parseTitle } from '../App';
 const localizer = BigCalendar.momentLocalizer(moment);
 
 class Calendar extends PureComponent {
@@ -15,7 +17,7 @@ class Calendar extends PureComponent {
 
   componentDidMount() {
     axios
-      .get('http://localhost:1337/happenings')
+      .get(`${endPoint}/happenings`)
       .then(response => {
         // Handle success.
         console.log('response', response);
