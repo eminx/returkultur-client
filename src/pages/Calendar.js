@@ -13,7 +13,8 @@ const localizer = BigCalendar.momentLocalizer(moment);
 class Calendar extends PureComponent {
   state = {
     happenings: [],
-    loading: true
+    loading: true,
+    error: false
   };
 
   componentDidMount() {
@@ -25,15 +26,20 @@ class Calendar extends PureComponent {
       })
       .catch(error => {
         // Handle error.
+        this.setState({ loading: false, error: true });
         console.log('An error occurred:', error);
       });
   }
 
   render() {
-    const { happenings, loading } = this.state;
+    const { happenings, loading, error } = this.state;
 
     if (loading) {
       return <Loader />;
+    }
+
+    if (error) {
+      return 'error loading page';
     }
 
     const happeningsForCalendar =

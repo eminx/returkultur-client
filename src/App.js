@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import { Box, Image, Anchor, Grommet } from 'grommet';
+import { Box, Image, Anchor, DropButton, Grommet } from 'grommet';
 import axios from 'axios';
+import MediaQuery from 'react-responsive';
 
 import theme from './theme';
 import './App.css';
@@ -55,7 +56,8 @@ class App extends Component {
   state = {
     pages: [],
     posts: [],
-    loading: false
+    loading: false,
+    isMenuOpen: false
   };
 
   componentDidMount() {
@@ -77,11 +79,14 @@ class App extends Component {
   }
 
   render() {
-    const { pages, posts } = this.state;
+    const { pages, posts, isMenuOpen } = this.state;
 
     const normalPages = pages.filter(
       page => page.title !== 'Kontakt' && page.title !== 'Start'
     );
+
+    const pathname = window.location.pathname;
+    const currentRoute = mainNav.find(nav => nav.route === pathname).label;
 
     return (
       <Router>
@@ -94,6 +99,7 @@ class App extends Component {
               padding: 12,
               paddingTop: 0
             }}
+            id="outer-container"
           >
             <AppBar>
               <Box justify="center" width="100%" pad="none">
@@ -105,30 +111,60 @@ class App extends Component {
                     />
                   </Link>
                 </Box>
-                <nav>
-                  <Box
-                    as="ul"
-                    pad="none"
-                    direction="row"
-                    justify="center"
-                    background="light-1"
-                  >
-                    {mainNav &&
-                      mainNav.map(nav => (
-                        <Box as="li" key={nav.label}>
-                          <Link
-                            to={nav.route}
-                            style={{
-                              padding: 24,
-                              textTransform: 'uppercase'
-                            }}
-                          >
-                            <Anchor as="span">{nav.label}</Anchor>
-                          </Link>
-                        </Box>
-                      ))}
-                  </Box>
-                </nav>
+                <MediaQuery query="(min-width: 601px)">
+                  <nav>
+                    <Box
+                      as="ul"
+                      pad="none"
+                      direction="row"
+                      justify="center"
+                      background="light-1"
+                    >
+                      {mainNav &&
+                        mainNav.map(nav => (
+                          <Box as="li" key={nav.label}>
+                            <Link
+                              to={nav.route}
+                              style={{
+                                padding: 24,
+                                textTransform: 'uppercase'
+                              }}
+                            >
+                              <Anchor as="span">{nav.label}</Anchor>
+                            </Link>
+                          </Box>
+                        ))}
+                    </Box>
+                  </nav>
+                </MediaQuery>
+
+                <MediaQuery query="(max-width: 600px)">
+                  <DropButton
+                    label="Menu"
+                    open={isMenuOpen}
+                    onOpen={() => this.setState({ isMenuOpen: true })}
+                    dropContent={
+                      <Box>
+                        {mainNav.map(nav => (
+                          <Box as="div" key={nav.label}>
+                            <Link
+                              to={nav.route}
+                              style={{
+                                padding: 24,
+                                textTransform: 'uppercase'
+                              }}
+                              onClick={() =>
+                                this.setState({ isMenuOpen: false })
+                              }
+                            >
+                              <Anchor as="span">{nav.label}</Anchor>
+                            </Link>
+                          </Box>
+                        ))}
+                      </Box>
+                    }
+                  />
+                </MediaQuery>
               </Box>
             </AppBar>
 
