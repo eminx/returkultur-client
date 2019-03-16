@@ -60,7 +60,7 @@ class Page extends PureComponent {
               <Image
                 fit="contain"
                 style={{ maxHeight: 320 }}
-                src={endPoint + page.image.url}
+                src={page.image.url}
               />
             </Box>
           )}

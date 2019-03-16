@@ -46,7 +46,7 @@ class Home extends PureComponent {
                   <Image
                     fit="contain"
                     style={{ maxHeight: 320 }}
-                    src={endPoint + page.image.url}
+                    src={page.image.url}
                   />
                 )}
                 <Text textAlign="center">{post.content.slice(0, 50)}...</Text>

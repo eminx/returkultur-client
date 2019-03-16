@@ -53,7 +53,7 @@ class Post extends PureComponent {
             <Image
               fit="contain"
               style={{ maxHeight: 320 }}
-              src={endPoint + post.image.url}
+              src={post.image.url}
             />
           )}
           {post && <Markdown source={post.content} />}
