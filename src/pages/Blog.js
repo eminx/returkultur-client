@@ -1,13 +1,18 @@
 import React, { PureComponent } from 'react';
 import moment from 'moment';
 import { Link } from 'react-router-dom';
-import { Box, Anchor, Heading, Text } from 'grommet';
+import { Box, Anchor, Heading, Image, Text } from 'grommet';
 
+import Loader from '../components/Loader';
 import { parseTitle } from '../App';
 
 class Blog extends PureComponent {
   render() {
     const { posts } = this.props;
+
+    if (!posts || posts.length < 1) {
+      return <Loader />;
+    }
 
     return (
       <Box direction="row" wrap justify="center">
@@ -29,12 +34,30 @@ class Blog extends PureComponent {
                   <Anchor as="div">{post.title}</Anchor>
                 </Link>
               </Heading>
-              <Text size="xsmall" as="div" margin={{ bottom: 'small' }}>
+
+              <Text
+                size="small"
+                textAlign="end"
+                as="div"
+                margin={{ bottom: 'small' }}
+              >
                 <em>
                   {post.author}, {moment(post.createdAt).format('DD / MM / YY')}
                 </em>
               </Text>
-              <Text>{post.content.slice(0, 50)}...</Text>
+
+              <Box direction="row" justify="center" align="center" wrap>
+                <Box basis="140px">
+                  <Image
+                    fit="contain"
+                    style={{ maxHeight: 180 }}
+                    src={post.image.url}
+                  />
+                </Box>
+                <Box pad="medium" basis="2/3">
+                  <Text>{post.content.slice(0, 100)}...</Text>
+                </Box>
+              </Box>
             </Box>
           ))}
         </Box>

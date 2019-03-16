@@ -6,6 +6,7 @@ import 'react-big-calendar/lib/css/react-big-calendar.css';
 import 'moment/locale/en-gb';
 import { Box, Heading } from 'grommet';
 
+import Loader from '../components/Loader';
 import { endPoint, parseTitle } from '../App';
 const localizer = BigCalendar.momentLocalizer(moment);
 
@@ -20,7 +21,6 @@ class Calendar extends PureComponent {
       .get(`${endPoint}/happenings`)
       .then(response => {
         // Handle success.
-        console.log('response', response);
         this.setState({ loading: false, happenings: response.data });
       })
       .catch(error => {
@@ -30,7 +30,12 @@ class Calendar extends PureComponent {
   }
 
   render() {
-    const { happenings } = this.state;
+    const { happenings, loading } = this.state;
+
+    if (loading) {
+      return <Loader />;
+    }
+
     const happeningsForCalendar =
       happenings &&
       happenings.map(happening => ({

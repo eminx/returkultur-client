@@ -22,7 +22,6 @@ const AppBar = props => (
     direction="row"
     align="center"
     justify="between"
-    background="light-1"
     pad="none"
     style={{ fontFamily: 'system-ui' }}
     {...props}
@@ -107,7 +106,13 @@ class App extends Component {
                   </Link>
                 </Box>
                 <nav>
-                  <Box as="ul" pad="none" direction="row" justify="center">
+                  <Box
+                    as="ul"
+                    pad="none"
+                    direction="row"
+                    justify="center"
+                    background="light-1"
+                  >
                     {mainNav &&
                       mainNav.map(nav => (
                         <Box as="li" key={nav.label}>

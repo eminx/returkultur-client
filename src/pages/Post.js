@@ -3,20 +3,23 @@ import moment from 'moment';
 import { Text, Image, Box, Heading } from 'grommet';
 import Markdown from 'react-markdown';
 
+import Loader from '../components/Loader';
 import { endPoint } from '../App';
 
 const PostMeta = ({ post }) => (
   <Box>
     <Box
       justify="center"
-      margin={{ bottom: 'medium' }}
+      margin={{ bottom: 'small' }}
       style={{ fontFamily: 'system-ui' }}
     >
-      <Text size="small">publicerad av </Text>
-      <Text>{post.author}</Text>
+      {/* <Text>publicerad av </Text> */}
+      <Text textAlign="center">{post.author}</Text>
     </Box>
     <Box>
-      <Text>{moment(post.createdAt).format('DD / MM / YY')}</Text>
+      <Text textAlign="center">
+        {moment(post.createdAt).format('DD / MM / YY')}
+      </Text>
     </Box>
   </Box>
 );
@@ -26,7 +29,7 @@ class Post extends PureComponent {
     const { posts, post } = this.props;
 
     if (!post || !posts) {
-      return '...loading';
+      return <Loader />;
     }
 
     return (

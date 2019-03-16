@@ -3,14 +3,15 @@ import { Link } from 'react-router-dom';
 import { Anchor, Image, Box, Heading } from 'grommet';
 import Markdown from 'react-markdown';
 
+import Loader from '../components/Loader';
 import { endPoint, parseTitle } from '../App';
 
 class Page extends PureComponent {
   render() {
     const { pages, page, match } = this.props;
 
-    if (!page || !pages) {
-      return '...loading';
+    if (!page || !pages || pages.length < 1) {
+      return <Loader />;
     }
 
     return (
