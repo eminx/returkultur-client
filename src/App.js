@@ -104,6 +104,7 @@ class App extends Component {
                   <Link to="/">
                     <Image
                       src="https://s3.eu-central-1.amazonaws.com/skogen-reading-materials/RK-logo-roots.png"
+                      height={120}
                       margin={{ top: 'small' }}
                     />
                   </Link>
