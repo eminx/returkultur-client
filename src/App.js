@@ -103,7 +103,7 @@ class App extends Component {
                 <Box direction="row" justify="center" width="100%">
                   <Link to="/">
                     <Image
-                      src="https://returkultur.s3.eu-central-1.amazonaws.com/c6c4ef9feca94a7c98071287f2281b78.jpg"
+                      src="https://s3.eu-central-1.amazonaws.com/skogen-reading-materials/RK-logo-roots.png"
                       margin={{ top: 'small' }}
                     />
                   </Link>
