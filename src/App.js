@@ -12,7 +12,7 @@ import Post from './pages/Post';
 import Blog from './pages/Blog';
 import Home from './pages/Home';
 
-const endPoint = 'https://new.returkultur.se'; // prod
+const endPoint = 'https://returkultur.herokuapp.com'; // prod
 // const endPoint = 'http://localhost:1337'; // dev
 
 const parseTitle = title => title.replace(/\s+/g, '-').toLowerCase();
