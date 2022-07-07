@@ -5,7 +5,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "grommet": "^2.5.5",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "react": "^16.8.3",
     "react-big-calendar": "^0.20.3",
     "react-dom": "^16.8.3",
